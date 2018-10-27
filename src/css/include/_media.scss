@@ -1,0 +1,127 @@
+// 媒体查询 768px
+
+// 展开侧边菜单 pc端显示样式
+.show-sidebar.full {
+    .menu-toggle .fa{
+        transform: rotate(-90deg);
+    }    
+    .app-sidebar{
+        width: 60px;
+        .sidebar-content {
+            top:10px;
+        }
+        .sub-menu {
+            display: none;
+            table-layout: fixed;
+            position: fixed;
+            left: 60px;
+            top: 50px;
+            z-index: 1031;
+            padding: 30px 0px 60px;
+            list-style: none;
+            width: 140px;
+            border-right: 1px solid rgb(230, 230, 230);
+            height: 100%;
+            > li > a {
+                padding: 8px 15px 8px 15px;
+            }
+        }
+
+        .sidebar-element {
+            .divider , 
+            > li > a > span {
+                display:none;
+            }
+            > li > a > .fa {
+                font-size: 19px;
+                min-width:auto;
+                margin-right: 0;
+            }
+            > li > a:before {
+                content:'';
+            }
+        }
+    }
+    .app-content {
+        margin-left: 60px;
+        -webkit-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+    }
+}
+
+//移动端显示样式
+@media #{$phone} { // ~ max-width: 768px    
+    .app-sidebar {
+        width: 0px;
+        -webkit-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+    }
+    .app-content {
+        margin-left: 0px;
+    }
+    // 顶部变色
+    .navbar-white {
+        background: #4285f4;
+        border-bottom: 1px solid #4285f4;
+        .navbar-nav>li>a {
+            color: #fff;
+            &:hover,
+            &:focus{
+                color: #fff;
+            }
+        }
+        .navbar-nav>.open>a, .navbar-nav>.open>a:focus, .navbar-nav>.open>a:hover {
+            color: #fff;
+            background-color: transparent;
+        }
+    }
+
+    // 展开侧边菜单 移动端显示样式
+    .show-sidebar {
+        .menu-toggle .fa{
+            transform: rotate(90deg);
+        }
+    	.menubg{
+    	    position: fixed;
+    	    _position: absolute;
+    	    pointer-events: auto;
+    	    top: 0;
+    	    left: 0;
+    	    width: 100%;
+    	    height: 100%;
+    	    z-index: 1;
+    	    background-color: rgb(0, 0, 0);
+    	    opacity: 0.6;
+    	}
+    	.app-sidebar{
+    	    width: 200px;
+    	}
+    }
+
+    .app-header {
+    	.navbar-header , .navbar-nav {
+    		float:left;
+    	}
+		.collapse {
+		    display: block;
+		}
+		.navbar-right {
+			float:right;
+			> li {
+				display:inline-block;
+			}
+		}
+		.navbar-nav .open .dropdown-menu {
+		    position: absolute;
+		    left: auto;
+		    right: 0;
+		    background-color: #fff;
+		    border: 1px solid rgba(0,0,0,.15);
+		    border-radius: 4px;
+		    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+		    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+		}
+	}
+}

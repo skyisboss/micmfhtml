@@ -1,0 +1,78 @@
+@@include('include/header.html')
+    
+    
+<div class="content-body container-fluid">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-md-10 mt5">
+                    <a href="/admin/group/add_role.html" id="buttons_0" class="btn btn-sm btn-primary">
+                        <i class="fa fa-plus-circle"></i>新增角色</a>
+                    <button type="button" class="btn btn-sm btn-success" id="buttons_1">
+                        <i class="fa fa-check-circle"></i>启用</button>
+                    <button type="button" class="btn btn-sm btn-warning" id="buttons_2">
+                        <i class="fa fa-ban"></i>禁用</button>
+                </div>
+                <div class="col-md-2 mt5 pull-right">
+                    <div class="input-group">
+                        <input type="text" class="form-control input-sm" id="search" name="search" value="" placeholder="请输入关键字">
+                        <span class="input-group-addon btn btn-default" onclick="if($('#search').val() != '') {location.href='?search='+$('#search').val();}">搜索</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <!-- 响应式表格 -->
+            <div class="table-responsive">
+                <!-- $table_config 设置表格配置 -->
+                <table class="table table-striped app-table">
+                    <thead>
+                        <tr>
+                            <th width="" class="ttable-head-id">ID</th>
+                            <th width="" class="ttable-head-title">角色</th>
+                            <th width="" class="ttable-head-description">描述</th>
+                            <th width="" class="ttable-head-status">状态</th>
+                            <th width="" class="ttable-head-action">操作</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>超级管理员</td>
+                            <td>超级管理员拥有全部权限</td>
+                            <td>
+                                <span class="color-green">
+                                    <i class="fa fa-check-circle"></i>正常</span>
+                            </td>
+                            <td>
+                                <a href="/admin/user/editadmin/uid/1.html" class="badge badge-secondary">
+                                    <i class="fa fa-pencil"></i>编辑
+                                </a>
+                                <a href="/admin/user/editadmin/uid/1.html" class="badge badge-secondary">
+                                    <i class="fa fa-trash-o"></i>编辑
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>演示组</td>
+                            <td>测试管理组</td>
+                            <td>
+                                <span class="color-yellow">
+                                    <i class="fa fa-ban"></i>禁用</span>
+                            </td>
+                            <td>
+                                <a href="/admin/user/editadmin/uid/1.html" class="badge badge-secondary">
+                                    <i class="fa fa-pencil"></i>编辑
+                                </a>
+                                <a href="/admin/user/editadmin/uid/1.html" class="badge badge-secondary">
+                                    <i class="fa fa-trash-o"></i>编辑
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@@include('include/footer.html')

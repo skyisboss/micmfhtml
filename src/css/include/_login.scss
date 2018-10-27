@@ -1,0 +1,53 @@
+/*------------------------------------------------------------------
+	后台登录
+*/
+body {
+    background-image: url(/dist/images/bg-full.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.logo-wrap {
+	max-width: 400px;
+	margin: 80px auto;
+	.panel{
+		box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+	}
+	.panel-heading {
+		text-align: center;
+		padding: 30px 0;
+	}
+	.panel-body {
+		padding: 15px 30px;
+		.form-control {
+			height: 38px;
+			padding: 6px 35px;
+			border-radius: 4px;
+			//border:1px solid #ddd;
+			&:focus + .item-icon{
+				color: #28a0ff; 
+			}
+		}
+		.item-icon{
+			position: absolute;
+			top: 7px;
+			left: 28px;
+			font-size: 18px;
+			color: #999;
+		}
+		
+		.btn-block {
+			color: #fff;
+		    background-color: #2572f2;
+		    border-color: #2572f2;
+		    border-top-color: #0c57d3;
+		    -webkit-box-shadow: inset 0 2px 0 #1266f1;
+		    box-shadow: inset 0 2px 0 #1266f1;
+		    border-radius: 4px;
+		    padding: 10px 12px;
+		    margin-top: 30px;
+		}
+	}
+}
+

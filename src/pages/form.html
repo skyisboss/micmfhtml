@@ -1,0 +1,74 @@
+@@include('include/header.html')
+    
+    
+<div class="content-body container-fluid">
+    <div class="panel panel-default app-panel">
+        <ul class="nav nav-tabs app-nav-tabs">
+            <li class="active">
+                <a href="?tab=basic">基本设置</a></li>
+            <li>
+                <a href="?tab=safe">安全设置</a></li>
+            <li>
+                <a href="?tab=email">邮件设置</a></li>
+            <li>
+                <a href="?tab=user">用户设置</a></li>
+        </ul>
+        <div class="panel-body">
+            <div class="tab-content">
+                <form data-referrer="2" class="form-horizontal text-left widget-form ajax-form" method="post">
+                    <div class="form-group col-md-12 " id="form_0">
+                        <label class="col-sm-1 control-label col-widget " for="0">邮件服务</label>
+                        <div class="col-sm-4">
+                            <label class="radio-inline 0_0">
+                                <input class="widget-input" type="radio" name="0" id="0" value="0" checked="">关闭</label>
+                            <label class="radio-inline 0_1">
+                                <input class="widget-input" type="radio" name="0" id="0" value="1">启用</label></div>
+                    </div>
+                    <div class="form-group col-md-12 " id="form_1">
+                        <label class="col-sm-1 control-label col-widget " for="1">SMTP服务器</label>
+                        <div class="col-sm-4">
+                            <input class="form-control" type="text" id="1" name="1" value="25" placeholder=""></div>
+                    </div>
+                    <div class="form-group col-md-12 " id="form_2">
+                        <label class="col-sm-1 control-label col-widget " for="2">发信人邮箱</label>
+                        <div class="col-sm-4">
+                            <input class="form-control" type="text" id="2" name="2" value="" placeholder=""></div>
+                    </div>
+                    <div class="form-group col-md-12 " id="form_3">
+                        <label class="col-sm-1 control-label col-widget " for="3">发件人名称</label>
+                        <div class="col-sm-4">
+                            <input class="form-control" type="text" id="3" name="3" value="" placeholder=""></div>
+                    </div>
+                    <div class="form-group col-md-12 " id="form_4">
+                        <label class="col-sm-1 control-label col-widget " for="4">邮箱登录账号</label>
+                        <div class="col-sm-4">
+                            <input class="form-control" type="text" id="4" name="4" value="" placeholder=""></div>
+                    </div>
+                    <div class="form-group col-md-12 " id="form_5">
+                        <label class="col-sm-1 control-label col-widget " for="5">邮箱登录密码</label>
+                        <div class="col-sm-4">
+                            <input class="form-control" type="text" id="5" name="5" value="" placeholder=""></div>
+                    </div>
+                    <div class="form-group col-md-12 " id="form_5">
+                        <label class="col-sm-1 control-label col-widget " for="5">允许访问后台IP</label>
+                        <div class="col-sm-4">
+                            <textarea class="form-control" id="5" rows="3" name="5" placeholder=""></textarea>
+                            <span class="help-block">
+                                多个用IP使用英文逗号分隔。留空则不做限制。
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <hr>
+                        <div class="col-sm-4 col-md-offset-1 col-widget">
+                            <button type="submit" class="btn btn-primary w100 ajax-submit">确定</button>
+                            <button type="button" class="btn btn-default" onclick="javascript:history.back(-1);return false;">返回</button>
+                            <button type="button" class="btn btn-success pull-right">测试</button></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@@include('include/footer.html')

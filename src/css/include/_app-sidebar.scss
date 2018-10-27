@@ -1,0 +1,145 @@
+/*------------------------------------------------------------------
+    左侧边栏
+*/
+.app-sidebar {
+    background: #f5f5f5;
+    width: 200px;
+    left: 0;
+    position: absolute;
+    border-right: 1px solid #e3e3e3;
+    .sidebar-container {
+		display: table;
+		table-layout: fixed;
+		width: 100%;
+		height: 100%;
+    }
+    .sidebar-spacer {
+    	height: 100%;
+    	display: table-row;
+    	display: table-row;
+    }
+    .sidebar-scroll {
+    	position: relative;
+    	height: 100%;
+    	width: 100%;
+    	overflow: hidden;
+        &.ps {
+            position: absolute;
+        }
+    }
+
+    .sidebar-content {
+    	position: relative;
+    	top: 0;
+    	bottom: 0;
+    	left: 0;
+    	right: 0;
+    	padding-top: 8px;
+    }
+
+    .sidebar-element {
+        margin: 0;
+        padding: 0;
+                > li {
+                    list-style: none;
+                    &.parent {
+                        >a:before {
+                            content: '\f0d9';
+                            float: right;
+                            font-family: "FontAwesome";
+                            font-size: 0.8rem;
+                            color: #b0b0b0;
+                        }
+                        &.open {
+                            > a {
+                                //background-color: $parent-open-a-background;
+                            }
+                            >a:before {
+                                //transform:rotate(-90deg);
+                                content: '\f0d7';
+                            }
+                        }
+                    }
+                    > ul {
+                        @include sub-menu-border();
+                    }
+                    ul {
+                        display: none;
+                        background: $sub-menu-background;
+                        padding: 10px 0;
+                        list-style: none;
+                        line-height: 20px;
+                        .title {
+                            display: none;
+                        }
+                        li {
+                            >ul {
+                                padding: 5px 0;
+                            }
+                            > a {
+                                padding: 8px 15px 8px 49px;
+                                color: $sub-menu-a-color;
+                                font-size: 13px;
+                                display: block;
+                                text-overflow: ellipsis;
+                                overflow: hidden;
+                                white-space: nowrap;
+                            }
+                            > a:hover {
+                                background-color: $sub-menu-a-hover-background;
+                            }
+                        }
+                    }
+                    &.open>ul , &.open>ul .nav-items .content>ul {
+                        display: block;
+                    }
+                    > a {
+                        display: block;
+                        padding: 0 20px;
+                        color: $sidebar-a-color;
+                        font-size: 14px;
+                        line-height: 38px;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        &:hover {
+                            @include sidebar-a-hover();
+                        }
+                        .fa {
+                            line-height: 18px;
+                            //font-size: 18px;
+                            min-width: 19px;
+                            text-align: center;
+                        }
+                        &.active{
+                            color: #4285f4;
+                            font-weight:600;
+                            background: #f0f0f0;
+                        }
+                    }
+                }
+        .divider {
+            padding: 20px 20px 0;
+            color: #b0b0b0;
+            line-height: 30px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: .8462rem;
+        }
+    }
+}   
+
+.fixed-sidebar {
+    .app-sidebar {
+        height: 100%;
+        margin-top: 50px;
+        padding-bottom: 50px;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        z-index: 1029;
+    }
+}
+
+
+

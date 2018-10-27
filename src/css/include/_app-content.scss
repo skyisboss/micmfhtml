@@ -1,0 +1,166 @@
+/*------------------------------------------------------------------
+    内容区域
+*/
+
+.app-content {
+	position: relative;
+	left: 0;
+	margin-left: 200px;
+	min-height: 100%;
+	.content-head {
+		padding: 20px;
+		.breadcrumb {
+			margin-bottom: 0;
+			background-color: #e7e7e7;
+		}
+	}
+
+	.content-body {
+		width: 100%;
+		padding-right: 20px;
+		padding-left: 20px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+}
+
+/*------------------------------------------------------------------
+    首页
+*/
+.total-widget {
+	// border-radius: 0;
+	// border: 0;
+	box-shadow:none;
+	transition: all .2s ease-in-out;
+	&:hover {
+		-webkit-transform: translateY(-3px);
+		transform: translateY(-3px);
+		box-shadow: 0 0.5rem 2rem #d8dfed;
+	}
+	.panel-body {
+		padding: 0;
+		text-align: center;
+		.left {
+			float:left;
+			color: #fff;
+			width:40%;
+			padding: 25px;
+		}
+		.right {
+			padding: 10px 0;
+			color: #979DAF;
+			.value { font-size: 36px;}
+		}
+		.back-users{background: #ea644a;}
+		.back-clipboard{background: #03b8cf;}
+		.back-comments{background: #38b03f;}
+		.back-files{background: #8666b8;}
+	}
+}
+
+.other-info {
+	.table tbody+tbody, .table td, .table th, .table thead th {
+		border: 0;
+	}
+}
+
+.system-info {
+	.panel-widget {
+		.panel-heading {
+			padding:15px;
+		}
+		.panel-body {
+			padding:0;
+			.table>tbody>tr>td {
+				color:#555;
+				padding: 12px;
+			    border-top: 0;
+			}
+		}
+	}
+}
+
+
+/*------------------------------------------------------------------
+    表单
+*/
+.app-panel {
+	border:none;	
+	@media (min-width: 768px) {
+		.col-md-offset-1.col-widget {
+			margin-left: 12%;
+		}
+		.col-sm-1.col-widget{
+			width: 12%;
+			text-align: left;
+			font-family: "Microsoft JhengHei", sans-serif;
+		}
+	}
+	.form-control {
+		height: 36px;
+		border-radius: 0;
+		border: 1px solid #ddd;
+		&:focus{
+			border-color: #66afe9;
+		}
+	}
+	textarea.form-control{ height: auto; }
+	.help-block {
+		color: #999;
+		font-size: 12px;
+		font-family: "Microsoft JhengHei", sans-serif;
+		&:before {
+			font: normal normal normal 14px/1 FontAwesome;
+		    content: "\f05a";
+		}
+	}
+
+	// 标签页
+	.app-nav-tabs {
+		background: #ededed;
+		> li {
+			> a {
+				&:hover { 
+					color: #00b9eb;
+					background: #fff; 
+				}
+			}
+			&.active > a{
+				border: 1px solid transparent;
+				color: #27c24c;
+			}
+		}
+	}
+}
+
+
+
+/*------------------------------------------------------------------
+    表格
+*/
+
+.app-table {
+	border: 1px solid #e5e5e5;
+	> thead > tr > th {
+	    border-bottom: 1px solid #ddd;
+	}
+	> tbody > tr > td, 
+	> tbody > tr > th, 
+	> tfoot > tr > td, 
+	> tfoot > tr > th, 
+	> thead > tr > td, 
+	> thead > tr > th {
+		border-top: 0;
+		padding: .75rem;
+	}
+
+	&.table-striped tbody tr:nth-of-type(odd) {
+	    background-color: #f9f9f9;
+	}
+	&.table-bordered {
+		td , th {
+			border: 0;
+			border-bottom: 1px solid #dee2e6;
+		}
+	}
+}

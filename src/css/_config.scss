@@ -1,0 +1,146 @@
+//======================= 公共 =======================
+.fa {margin-right:5px;}
+/*循环*/
+$margin-lists:(0,5,10,15,20,25,30);
+@mixin margin-item($param1,$param2,$param3){
+    .m#{$param1}#{$param3}{margin-#{$param2}:1px * $param3 !important;};
+}
+@mixin padding-item($param1,$param2,$param3){
+    .p#{$param1}#{$param3}{padding-#{$param2}:1px * $param3  !important;};
+}
+@each $value in $margin-lists {
+    @include margin-item('l','left',$value);
+    @include margin-item('r','right',$value);
+    @include margin-item('t','top',$value);
+    @include margin-item('b','bottom',$value);
+
+    @include padding-item('l','left',$value);
+    @include padding-item('r','right',$value);
+    @include padding-item('t','top',$value);
+    @include padding-item('b','bottom',$value);
+}
+
+//======================= 响应式 =======================
+// Extra small screen / phone
+$screen-xs:                  	480px;
+$screen-xs-min:              	$screen-xs;
+$screen-phone:               	$screen-xs-min;
+
+// Small screen / tablet
+$screen-sm:                  	768px;
+$screen-sm-min:              	$screen-sm;
+$screen-tablet:              	$screen-sm-min;
+
+// Medium screen / desktop
+$screen-md:                  	992px;
+$screen-md-min:              	$screen-md;
+$screen-desktop:             	$screen-md-min;
+
+// Large screen / wide desktop
+$screen-lg:                  	1200px;
+$screen-lg-min:              	$screen-lg;
+$screen-lg-desktop:          	$screen-lg-min;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max:              	($screen-sm-min - 1);
+$screen-sm-max:              	($screen-md-min - 1);
+$screen-md-max:              	($screen-lg-min - 1);
+$desktop: 					 	"(min-width: #{$screen-lg})";
+$laptop: 					 	"(min-width: #{$screen-md}) and (max-width: #{$screen-md-max})";
+$tablet: 					 	"(min-width: #{$screen-sm}) and (max-width: #{$screen-sm-max})";
+$phone: 					 	'(max-width: #{$screen-xs-max})';
+$small-phone: 			     	"(max-width: #{$screen-xs})";
+//非响应设备
+$non-responsive: 				"(min-width: #{$screen-sm})";
+
+//Retina Display
+$retina: 						"(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
+$high-dpi: 						"only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 13/10), only screen and (min-resolution: 120dpi)";
+
+//Google Chrome Query
+$webkit: 						"screen and (-webkit-min-device-pixel-ratio:0)";
+
+//IE8 Media Query
+$ie8: 							"\0screen";
+
+//IE9 & IE10 Media Query
+$ie910: 						"screen and (min-width:0\0)";
+
+//IE 10+ Media Query
+$ie10: 							"all and (-ms-high-contrast: none), (-ms-high-contrast: active)";
+
+//======================= 颜色 =======================
+//一般颜色
+$primary-color:				 	#4285f4;
+$dark-color:					#3d3c3c;
+$light-color: 					#ffffff;
+$black-color: 					#000000;
+$body-color: 					#404040;
+
+//状态颜色
+$danger-color: 					#ea4335;
+$warning-color: 				#fbbc05;
+$success-color: 				#34a853;
+$grey-color: 					#cccccc;
+$info-color: 					$primary-color;
+
+//文本颜色
+.text-danger {color: $danger-color;}
+.text-success {color: $success-color;}
+
+//按钮颜色
+.btn-primary {
+    background-color: #78a5f1;
+    border-color: #80a0d6;
+    &:hover,
+    &:active,
+    &:focus ,
+    &:active:hover{
+        background-color: #93b7f3;
+        border-color: transparent;
+    }
+}
+.btn-success {
+    background-color: #61daa5;
+    border-color: #61daa5;
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: #81e1b7;
+        border-color: transparent;
+    }
+}
+
+
+//元素
+$top-left-navbar-width:180px;
+$top-left-navbar-height:45px;
+
+$header-background:#fff; //顶部背景色
+$header-border-bottom:1px solid #e6e6e6; //顶部条下边框色
+$nav-link-color:#404040; //顶部链接文字色
+@mixin nav-link-hover(){
+    color: #404040;
+    background: #fff;
+}
+
+$sidebar-background:#f5f5f5;
+$sidebar-a-color:#646464;
+
+
+@mixin sidebar-a-hover(){
+	color:#646464;
+	background: #f0f0f0;
+}
+
+$sub-menu-background: #eeeeee;
+$sub-menu-a-color:#696969;
+$sub-menu-a-hover-background: #e7e7e7;
+
+
+@mixin sub-menu-border(){
+    border-top: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+}
+$parent-open-a-background:#282e3c;
+

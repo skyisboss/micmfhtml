@@ -1,0 +1,83 @@
+/*------------------------------------------------------------------
+	顶部条
+*/
+
+
+
+// 顶部背景颜色
+.navbar-white{
+    background: #fff;
+    padding: 0;
+    border: 0;
+    margin-bottom: 0;
+    border-bottom: 1px solid #e6e6e6;
+}
+.app-header {
+    .menu-toggle .fa{
+        -webkit-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+    }
+    .navbar-header {
+        .navbar-brand{height:50px;}
+    }
+    .dropdown.user-wrap {
+        .dropdown-menu {
+            top: 60px;
+            min-width:220px;
+            padding:0;
+            padding-bottom:5px;
+            &:before {
+                border-bottom: 8px solid #fff;
+                border-left: 8px solid transparent;
+                border-right: 8px solid transparent;
+                top: -8px;
+                content: "";
+                display: inline-block;
+                margin-left: -6px;
+                position: absolute;
+                left: auto;
+                right: 15px;
+                border-bottom-color: #4285f4;
+            }
+            a {
+                line-height: 2.4;
+            }
+        }
+        .user-info {
+            background-color: #4285f4;
+            color: #fff;
+            overflow: hidden;
+            padding: 20px 15px 14px;
+            border-radius: 2px 2px 0 0;
+            margin-bottom: 7px;
+        }
+    }
+    
+    .newbell{
+        background-color: #007bff;
+        border-radius: 50%;
+        height: 7px;
+        width: 7px;
+        position: absolute;
+        top: 13px;
+        right: 15px;
+        animation:newbell 1.5s;
+        animation-iteration-count:infinite;
+    }
+    @keyframes newbell
+    {
+        0%   {background: #007bff;}
+        50%   {background: #fff;}
+    }
+    .navbar-nav {
+        > li{
+            > a {
+                > .fa{
+                    font-size:20px;
+                }
+            }
+        }
+    }
+}
+
